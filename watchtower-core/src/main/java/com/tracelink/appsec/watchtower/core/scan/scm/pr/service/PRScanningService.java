@@ -127,8 +127,9 @@ public class PRScanningService extends AbstractScanningService {
 		if (!prs.isEmpty()) {
 			LOG.info("Need to scan " + prs.size() + " Pull Requests after downtime");
 			for (PullRequest pr : prs) {
+				LOG.info("Scanning " + pr.getPRString());
 				try {
-					doPullRequestScan(pr);
+					// doPullRequestScan(pr);
 				} catch (Exception e) {
 					LOG.error("Could not submit recovery scan " + pr.getPRString(), e);
 				}
