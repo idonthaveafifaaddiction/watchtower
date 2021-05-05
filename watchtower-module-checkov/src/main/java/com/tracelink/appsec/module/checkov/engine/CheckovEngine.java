@@ -84,8 +84,8 @@ public class CheckovEngine {
 	}
 
 	private void installCheckov() throws IOException {
-		runPipCommand("install", "-Iv", "checkov==" + EXPECTED_CHECKOV_VERSION, "--force-reinstall",
-				"--user", "--no-cache-dir", "--no-warn-script-location");
+		runPipCommand("install", "checkov==" + EXPECTED_CHECKOV_VERSION, "--force-reinstall",
+				"--no-cache-dir", "--no-warn-script-location");
 
 		String checkovVersionNum = runCheckovCommand("-v");
 		if (StringUtils.isBlank(checkovVersionNum)
